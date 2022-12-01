@@ -27,4 +27,10 @@ while game_is_on:
         print("GAME OVER")
         game_is_on = False
 
+    # Detect passed level
+    if turtle.ycor() > turtle.finish_line_y:
+        turtle.set_starting_position()
+        scoreboard.level_up()
+        car_manager.move_increment += 5
+
 screen.exitonclick()

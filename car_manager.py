@@ -12,10 +12,11 @@ class CarManager(Turtle):
         super().__init__()
         self.hideturtle()
         self.all_cars = []
+        self.move_increment = MOVE_INCREMENT
 
     def create_car(self):
         random_y = random.randint(-1000, 1000)
-        if -230 < random_y < 230:
+        if -230 < random_y < 250:
             new_car = Turtle()
             new_car.penup()
             new_car.shape("square")
@@ -27,7 +28,7 @@ class CarManager(Turtle):
 
     def drive_all_cars(self):
         for car in self.all_cars:
-            car.forward(MOVE_INCREMENT)
+            car.forward(self.move_increment)
 
     def collision(self, turtle):
         for car in self.all_cars:
