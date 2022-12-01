@@ -24,7 +24,7 @@ while game_is_on:
 
     # Detect collision between turtle and car
     if car_manager.collision(turtle):
-        print("GAME OVER")
+        scoreboard.game_over()
         game_is_on = False
 
     # Detect passed level
