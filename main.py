@@ -10,6 +10,7 @@ screen.tracer(0)
 
 turtle = Player()
 car_manager = CarManager()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(fun=turtle.move, key="Up")
@@ -21,3 +22,9 @@ while game_is_on:
     car_manager.create_car()
     car_manager.drive_all_cars()
 
+    # Detect collision between turtle and car
+    if car_manager.collision(turtle):
+        print("GAME OVER")
+        game_is_on = False
+
+screen.exitonclick()
